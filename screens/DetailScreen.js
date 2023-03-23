@@ -1,14 +1,10 @@
 import { StyleSheet, View } from 'react-native';
-import { AppScreen, AppButton } from './components';
+import { AppScreen, AppButton } from '../components';
 
 const DetailScreen = () => {
     return (
         <AppScreen>
             <View style={styles.container}>
-                <AppButton
-                    title='Button'
-                    iconName='camera-outline'
-                />
             </View>
         </AppScreen>
     )

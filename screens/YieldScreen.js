@@ -1,13 +1,14 @@
 import { StyleSheet, View } from 'react-native';
-import { AppScreen, AppButton } from './components';
+import { AppScreen, AppButton } from '../components';
 
-const YieldScreen = () => {
+const YieldScreen = ({ navigation }) => {
     return (
         <AppScreen>
             <View style={styles.container}>
                 <AppButton
                     title='Button'
-                    iconName='camera-outline'
+                    iconName='arrow-right'
+                    onPress={() => navigation.navigate("Detail")}
                 />
             </View>
         </AppScreen>
