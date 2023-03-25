@@ -1,9 +1,10 @@
 import { Image, StyleSheet, View } from 'react-native';
 import { AppScreen, AppText } from '../components';
+import pokemon from '../data/pokemon';
 
-const DetailScreen = ({ }) => {
+const DetailScreen = ({ route }) => {
 
-
+    const { id, index } = route.params
 
     return (
         <AppScreen>
@@ -11,14 +12,14 @@ const DetailScreen = ({ }) => {
 
                 <View style={styles.wrapper}>
                     <Image
-                        source={require('../assets/3.png')}
+                        source={pokemon[index].sprite}
                         style={styles.sprite}
                     />
 
                     <View>
-                        <AppText variant='titleMedium'>{`No. 003`}</AppText>
-                        <AppText variant='headlineMedium'>Bulbasaur</AppText>
-                        <AppText variant='titleMedium'>{`Seed Pokemon`}</AppText>
+                        <AppText variant='titleSmall'>{`No. ${pokemon[index].id}`}</AppText>
+                        <AppText variant='headlineMedium'>{pokemon[index].name}</AppText>
+                        <AppText variant='titleMedium'>{`${pokemon[index].category} Pokémon`}</AppText>
                     </View>
                 </View>
 
@@ -36,13 +37,14 @@ const styles = StyleSheet.create({
 
     wrapper: {
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
     },
 
     sprite: {
         width: 128,
         height: 128,
-        marginHorizontal: 15
+        marginLeft: 20,
+        marginRight: 15
     }
 
 });

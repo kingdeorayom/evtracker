@@ -3,9 +3,7 @@ import Stats from "./Stats";
 import AppCard from "./ui/AppCard";
 
 const PokemonCard = ({
-    name,
-    category,
-    sprite,
+    item,
     onPress
 }) => {
 
@@ -13,14 +11,14 @@ const PokemonCard = ({
         <AppCard
             onPress={onPress}
             mode='contained'
-            title={name}
+            title={item.name}
             titleVariant='headlineSmall'
-            subtitle={`${category} Pokemon`}
-            right={() => <Image source={sprite} />}
+            subtitle={`${item.category} Pokemon`}
+            right={() => <Image source={item.sprite} />}
             rightStyle={styles.cardTitleRightStyle}
             style={styles.cardStyle}
             cardTitleStyle={styles.cardTitleStyle}
-            children={<Stats />}
+            children={<Stats item={item} />}
         />
     );
 };

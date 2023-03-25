@@ -147,7 +147,7 @@ const theme = {
         "onBackground": "rgb(32, 26, 25)",
         "surface": "rgb(255, 255, 255)",
         "onSurface": "rgb(32, 26, 25)",
-        "surfaceVariant": "rgb(250, 231, 235)",
+        "surfaceVariant": "rgb(245, 245, 245)",
         "onSurfaceVariant": "rgb(83, 67, 65)",
         "outline": "rgb(133, 115, 112)",
         "outlineVariant": "rgb(216, 194, 190)",
@@ -160,7 +160,7 @@ const theme = {
             "level0": "transparent",
             "level1": "rgb(252, 238, 242)",
             "level2": "rgb(255, 255, 255)",
-            "level3": "rgb(248, 223, 227)",
+            "level3": "rgb(245, 245, 245)",
             "level4": "rgb(247, 221, 225)",
             "level5": "rgb(246, 216, 219)"
         },

@@ -3,16 +3,13 @@ import { StyleSheet, View } from "react-native";
 import PokemonCard from "./PokemonCard";
 
 const YieldCard = ({
-    name,
-    category,
-    sprite,
+    item,
     onPress,
 }) => {
+
     return (
         <PokemonCard
-            name={name}
-            category={category}
-            sprite={sprite}
+            item={item}
             onPress={onPress}
         />
     )
@@ -24,9 +21,7 @@ const YieldCards = ({ navigation, data }) => {
 
         return (
             <YieldCard
-                name={item.name}
-                category={item.category}
-                sprite={item.sprite}
+                item={item}
                 onPress={() =>
                     navigation.navigate("YieldStack", {
                         screen: "Detail",
@@ -45,7 +40,7 @@ const YieldCards = ({ navigation, data }) => {
             <FlashList
                 estimatedItemSize={140}
                 data={data}
-                keyExtractor={(item) => item.name}
+                keyExtractor={(item) => item.id}
                 renderItem={renderYieldCards}
                 showsVerticalScrollIndicator={false}
             />
