@@ -1,4 +1,5 @@
-import { createStackNavigator } from "@react-navigation/stack";
+import { createStackNavigator, TransitionPresets } from "@react-navigation/stack";
+import { AppHeader } from "../components";
 
 import HomeScreen from "../screens/HomeScreen";
 
@@ -9,9 +10,12 @@ export function HomeStack() {
     return (
         <Stack.Navigator
             initialRouteName="Home"
-            screenOptions={{ headerShown: false }}
+            screenOptions={{
+                header: (props) => <AppHeader {...props} />,
+                ...TransitionPresets.FadeFromBottomAndroid,
+            }}
         >
-            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Home" component={HomeScreen} initialParams={{ title: '' }} />
         </Stack.Navigator>
     )
 }

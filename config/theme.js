@@ -11,21 +11,21 @@ const fontConfig = {
     "displayMedium": {
         "fontFamily": "Roboto",
         "fontSize": 45,
-        "fontWeight": "400",
+        "fontWeight": "700",
         "letterSpacing": 0,
         "lineHeight": 52,
     },
     "displaySmall": {
         "fontFamily": "Roboto",
         "fontSize": 36,
-        "fontWeight": "400",
+        "fontWeight": "700",
         "letterSpacing": 0,
         "lineHeight": 44,
     },
     "headlineLarge": {
         "fontFamily": "Roboto",
         "fontSize": 32,
-        "fontWeight": "400",
+        "fontWeight": "700",
         "letterSpacing": 0,
         "lineHeight": 40,
     },
@@ -39,7 +39,7 @@ const fontConfig = {
     "headlineSmall": {
         "fontFamily": "Roboto",
         "fontSize": 24,
-        "fontWeight": "400",
+        "fontWeight": "700",
         "letterSpacing": 0,
         "lineHeight": 32,
     },
@@ -98,6 +98,7 @@ const fontConfig = {
         "fontWeight": "400",
         "letterSpacing": 0.25,
         "lineHeight": 20,
+
     },
     "bodySmall": {
         "fontFamily": "Roboto",
@@ -109,6 +110,13 @@ const fontConfig = {
     "default": {
         "fontFamily": "Roboto",
         "fontSize": 14,
+        "fontWeight": "400",
+        "letterSpacing": 0.25,
+        "lineHeight": 20,
+    },
+    "tabNavigation": {
+        "fontFamily": "Roboto",
+        "fontSize": 13,
         "fontWeight": "400",
         "letterSpacing": 0.25,
         "lineHeight": 20,
@@ -135,11 +143,11 @@ const theme = {
         "onError": "rgb(255, 255, 255)",
         "errorContainer": "rgb(255, 218, 214)",
         "onErrorContainer": "rgb(65, 0, 2)",
-        "background": "rgb(255, 251, 255)",
+        "background": "rgb(255, 255, 255)",
         "onBackground": "rgb(32, 26, 25)",
-        "surface": "rgb(255, 251, 255)",
+        "surface": "rgb(255, 255, 255)",
         "onSurface": "rgb(32, 26, 25)",
-        "surfaceVariant": "rgb(245, 221, 218)",
+        "surfaceVariant": "rgb(250, 231, 235)",
         "onSurfaceVariant": "rgb(83, 67, 65)",
         "outline": "rgb(133, 115, 112)",
         "outlineVariant": "rgb(216, 194, 190)",
@@ -151,7 +159,7 @@ const theme = {
         "elevation": {
             "level0": "transparent",
             "level1": "rgb(252, 238, 242)",
-            "level2": "rgb(250, 231, 235)",
+            "level2": "rgb(255, 255, 255)",
             "level3": "rgb(248, 223, 227)",
             "level4": "rgb(247, 221, 225)",
             "level5": "rgb(246, 216, 219)"

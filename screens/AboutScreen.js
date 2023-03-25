@@ -1,10 +1,13 @@
 import { StyleSheet, View } from 'react-native';
-import { AppScreen, AppButton } from '../components';
+import { AppBrand, AppScreen } from '../components';
 
 const AboutScreen = () => {
     return (
         <AppScreen>
             <View style={styles.container}>
+
+                <AppBrand marginTop={50} />
+
             </View>
         </AppScreen>
     )
@@ -15,8 +18,6 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
     },
 
 });
