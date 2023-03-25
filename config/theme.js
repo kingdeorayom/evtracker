@@ -32,7 +32,7 @@ const fontConfig = {
     "headlineMedium": {
         "fontFamily": "Roboto",
         "fontSize": 28,
-        "fontWeight": "400",
+        "fontWeight": "700",
         "letterSpacing": 0,
         "lineHeight": 36,
     },
@@ -135,7 +135,7 @@ const theme = {
         "onError": "rgb(255, 255, 255)",
         "errorContainer": "rgb(255, 218, 214)",
         "onErrorContainer": "rgb(65, 0, 2)",
-        "background": "rgb(255, 255, 255)",
+        "background": "rgb(255, 251, 255)",
         "onBackground": "rgb(32, 26, 25)",
         "surface": "rgb(255, 251, 255)",
         "onSurface": "rgb(32, 26, 25)",
