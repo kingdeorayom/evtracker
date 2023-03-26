@@ -12,7 +12,8 @@ const AppHeader = ({ navigation, back, route }) => {
         <Appbar.Header>
             {back ? <Appbar.BackAction onPress={_goBack} /> : null}
             <Appbar.Content title={route.params.title} />
-            {route.name === 'Home' ? <Appbar.Action icon="palette-outline" onPress={_handleTheme} /> : null}
+            {route.name === 'Home' ? <Appbar.Action icon="cached" onPress={_handleTheme} /> : null}
+            {route.name === 'About' ? <Appbar.Action icon="palette-outline" onPress={_handleTheme} /> : null}
             {/* <Appbar.Action icon="dots-vertical" onPress={_handleMore} /> */}
         </Appbar.Header>
     )

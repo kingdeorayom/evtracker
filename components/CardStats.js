@@ -2,9 +2,7 @@ import { StyleSheet, View } from "react-native";
 import AppChip from "./ui/AppChip";
 import AppText from "./ui/AppText";
 
-const Stats = ({ item }) => {
-
-    console.log(item.yield[0].hp <= 0)
+const CardStats = ({ item }) => {
 
     return (
         <View style={styles.statContainer}>
@@ -13,7 +11,7 @@ const Stats = ({ item }) => {
                     title={item.yield[0].hp}
                     textStyle={item.yield[0].hp > 0 ? styles.bold : null}
                 />
-                <AppText variant='bodySmall' style={styles.statName}>HP</AppText>
+                <AppText style={styles.statName}>HP</AppText>
             </View>
             <View>
                 <AppChip
@@ -54,7 +52,7 @@ const Stats = ({ item }) => {
     );
 };
 
-export default Stats;
+export default CardStats;
 
 const styles = StyleSheet.create({
 

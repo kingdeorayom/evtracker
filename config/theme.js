@@ -46,7 +46,7 @@ const fontConfig = {
     "titleLarge": {
         "fontFamily": "Roboto",
         "fontSize": 22,
-        "fontWeight": "500",
+        "fontWeight": "700",
         "letterSpacing": 0,
         "lineHeight": 28,
     },

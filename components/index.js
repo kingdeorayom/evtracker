@@ -11,8 +11,12 @@ export { default as ScreenTitle } from "./ui/ScreenTitle";
 
 export { default as PokemonCard } from "./PokemonCard";
 
-export { default as Stats } from "./Stats"
+export { default as CardStats } from "./CardStats"
 
 export { default as YieldCards } from "./YieldCards"
 
 export { default as SearchFilter } from "./SearchFilter"
+
+export { default as PresetValue } from "./PresetValue"
+export { default as ControlButtons } from "./ControlButtons"
+export { default as StatButtons } from "./StatButtons"

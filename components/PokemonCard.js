@@ -1,5 +1,5 @@
 import { Image, StyleSheet } from "react-native";
-import Stats from "./Stats";
+import CardStats from "./CardStats";
 import AppCard from "./ui/AppCard";
 
 const PokemonCard = ({
@@ -18,7 +18,7 @@ const PokemonCard = ({
             rightStyle={styles.cardTitleRightStyle}
             style={styles.cardStyle}
             cardTitleStyle={styles.cardTitleStyle}
-            children={<Stats item={item} />}
+            children={<CardStats item={item} />}
         />
     );
 };
