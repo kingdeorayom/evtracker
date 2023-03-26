@@ -59,6 +59,11 @@ const styles = StyleSheet.create({
         marginVertical: 10
     },
 
+    statName: {
+        textAlign: 'center',
+        fontWeight: '700'
+    },
+
     chipUnselected: {
         backgroundColor: "#f5f5f5",
     }

@@ -18,7 +18,10 @@ const PresetValue = ({
                                 setSelectedPresetValueIndex(index)
                                 setCustomValue(item.value)
                             }}>
-                            <AppChip title={item.label} />
+                            <AppChip
+                                title={item.label}
+                                textStyle={styles.chipTextStyle}
+                            />
                         </Pressable>
                     ) : (
                         <Pressable
@@ -30,6 +33,7 @@ const PresetValue = ({
                             <AppChip
                                 title={item.label}
                                 style={styles.chipUnselected}
+                                textStyle={styles.chipTextStyle}
                             />
                         </Pressable>
                     )
@@ -53,6 +57,10 @@ const styles = StyleSheet.create({
 
     chipUnselected: {
         backgroundColor: "#f5f5f5",
+    },
+
+    chipTextStyle: {
+        fontWeight: '700'
     }
 
 })
