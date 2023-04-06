@@ -36,6 +36,37 @@ const HomeScreen = () => {
     const [selectedStatButtonIndex, setSelectedStatButtonIndex] = useState(0);
     const [selectedPresetValueIndex, setSelectedPresetValueIndex] = useState(0);
 
+    const increment = () => {
+        if (value === 'hp')
+            setHp(previousValue => previousValue + customValue)
+        else if (value === 'atk')
+            setAttack(previousValue => previousValue + customValue)
+        else if (value === 'def')
+            setDefense(previousValue => previousValue + customValue)
+        else if (value === 'spa')
+            setSpecialAttack(previousValue => previousValue + customValue)
+        else if (value === 'spd')
+            setSpecialDefense(previousValue => previousValue + customValue)
+        else if (value === 'spe')
+            setSpeed(previousValue => previousValue + customValue)
+    }
+
+    const decrement = () => {
+        if (value === 'hp')
+            setHp(previousValue => previousValue - customValue)
+        else if (value === 'atk')
+            setAttack(previousValue => previousValue - customValue)
+        else if (value === 'def')
+            setDefense(previousValue => previousValue - customValue)
+        else if (value === 'spa')
+            setSpecialAttack(previousValue => previousValue - customValue)
+        else if (value === 'spd')
+            setSpecialDefense(previousValue => previousValue - customValue)
+        else if (value === 'spe')
+            setSpeed(previousValue => previousValue - customValue)
+    }
+
+
     return (
         <AppScreen>
             <View style={styles.container}>
@@ -71,14 +102,8 @@ const HomeScreen = () => {
                 <Divider style={styles.divider} />
 
                 <ControlButtons
-                    value={value}
-                    customValue={customValue}
-                    setHp={setHp}
-                    setAttack={setAttack}
-                    setDefense={setDefense}
-                    setSpecialAttack={setSpecialAttack}
-                    setSpecialDefense={setSpecialDefense}
-                    setSpeed={setSpeed}
+                    increment={increment}
+                    decrement={decrement}
                 />
 
             </View>
