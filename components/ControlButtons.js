@@ -6,6 +6,8 @@ const ControlButtons = ({
     decrement
 }) => {
 
+    console.log('4. ControlButtons Rendered')
+
     return (
 
         <View style={styles.controlButtonsContainer}>

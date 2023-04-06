@@ -7,6 +7,9 @@ const PresetValue = ({
     setSelectedPresetValueIndex,
     setCustomValue
 }) => {
+
+    console.log('3. PresetValue Rendered')
+
     return (
         <View style={styles.presetValueContainer}>
             {

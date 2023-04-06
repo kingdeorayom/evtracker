@@ -8,6 +8,9 @@ const StatButtons = ({
     setSelectedStatButtonIndex,
     setValue
 }) => {
+
+    console.log('2. StatButtons Rendered')
+
     return (
         <View style={styles.statButtonContainer}>
             {

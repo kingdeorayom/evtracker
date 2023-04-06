@@ -2,6 +2,9 @@ import { View, StyleSheet } from 'react-native'
 import AppText from './AppText';
 
 const AppBrand = ({ marginTop, marginBottom }) => {
+
+    console.log('1. AppBrand Rendered')
+
     return (
         <View style={[styles.container, { marginTop: marginTop, marginBottom: marginBottom }]}>
             <AppText variant='displayMedium'><AppText variant='displayMedium' style={styles.accent}>EV</AppText>Tracker</AppText>
