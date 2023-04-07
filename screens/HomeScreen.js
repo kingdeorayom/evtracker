@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Divider } from 'react-native-paper';
 import { AppScreen, AppText, AppBrand, PresetValue, ControlButtons, StatButtons } from '../components';
@@ -15,28 +15,10 @@ const HomeScreen = () => {
     const [specialDefense, setSpecialDefense] = useState(0)
     const [speed, setSpeed] = useState(0)
 
-    const stats_buttons = [
-        { value: 'hp', label: 'HP', stat: hp },
-        { value: 'atk', label: 'Atk', stat: attack },
-        { value: 'def', label: 'Def', stat: defense },
-        { value: 'spa', label: 'SpA', stat: specialAttack },
-        { value: 'spd', label: 'SpD', stat: specialDefense },
-        { value: 'spe', label: 'Spe', stat: speed },
-    ]
-
-    const preset_value_buttons = [
-        { value: 1, label: '1' },
-        { value: 2, label: '2' },
-        { value: 4, label: '4' },
-        { value: 6, label: '6' },
-        { value: 8, label: '8' },
-        { value: 12, label: '12' },
-    ]
-
     const [selectedStatButtonIndex, setSelectedStatButtonIndex] = useState(0);
     const [selectedPresetValueIndex, setSelectedPresetValueIndex] = useState(0);
 
-    const increment = () => {
+    const increment = useCallback(() => {
         if (value === 'hp')
             setHp(previousValue => previousValue + customValue)
         else if (value === 'atk')
@@ -49,9 +31,9 @@ const HomeScreen = () => {
             setSpecialDefense(previousValue => previousValue + customValue)
         else if (value === 'spe')
             setSpeed(previousValue => previousValue + customValue)
-    }
+    }, [selectedPresetValueIndex, selectedStatButtonIndex])
 
-    const decrement = () => {
+    const decrement = useCallback(() => {
         if (value === 'hp')
             setHp(previousValue => previousValue - customValue)
         else if (value === 'atk')
@@ -64,14 +46,13 @@ const HomeScreen = () => {
             setSpecialDefense(previousValue => previousValue - customValue)
         else if (value === 'spe')
             setSpeed(previousValue => previousValue - customValue)
-    }
-
+    }, [selectedPresetValueIndex, selectedStatButtonIndex])
 
     return (
         <AppScreen>
             <View style={styles.container}>
 
-                <AppBrand marginTop={10} marginBottom={30} />
+                <AppBrand marginTop={0} marginBottom={30} />
 
                 <AppText variant='titleLarge'>Choose Stat</AppText>
 
@@ -80,10 +61,15 @@ const HomeScreen = () => {
                 </AppText>
 
                 <StatButtons
-                    stats_buttons={stats_buttons}
                     selectedStatButtonIndex={selectedStatButtonIndex}
                     setSelectedStatButtonIndex={setSelectedStatButtonIndex}
                     setValue={setValue}
+                    hp={hp}
+                    attack={attack}
+                    defense={defense}
+                    specialAttack={specialAttack}
+                    specialDefense={specialDefense}
+                    speed={speed}
                 />
 
                 <AppText variant='titleLarge'>Preset Value</AppText>
@@ -93,17 +79,26 @@ const HomeScreen = () => {
                 </AppText>
 
                 <PresetValue
-                    preset_value_buttons={preset_value_buttons}
                     selectedPresetValueIndex={selectedPresetValueIndex}
                     setSelectedPresetValueIndex={setSelectedPresetValueIndex}
                     setCustomValue={setCustomValue}
                 />
 
-                <Divider style={styles.divider} />
+                {/* <Divider style={styles.divider} /> */}
 
                 <ControlButtons
                     increment={increment}
                     decrement={decrement}
+                // value={value}
+                // customValue={customValue}
+                // selectedStatButtonIndex={selectedStatButtonIndex}
+                // selectedPresetValueIndex={selectedPresetValueIndex}
+                // setHp={setHp}
+                // setAttack={setAttack}
+                // setDefense={setDefense}
+                // setSpecialAttack={setSpecialAttack}
+                // setSpecialDefense={setSpecialDefense}
+                // setSpeed={setSpeed}
                 />
 
             </View>
@@ -120,11 +115,13 @@ const styles = StyleSheet.create({
     },
 
     instruction: {
-        marginVertical: 10
+        marginVertical: 10,
+        color: '#808080',
+        fontSize: 14
     },
 
     divider: {
-        marginVertical: 20
+        marginVertical: 5
     },
 
 });

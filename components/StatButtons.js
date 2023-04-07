@@ -1,15 +1,30 @@
 import { StyleSheet, View, Pressable } from "react-native";
 import AppChip from "./ui/AppChip";
 import AppText from "./ui/AppText";
+import { memo } from "react";
 
 const StatButtons = ({
-    stats_buttons,
     selectedStatButtonIndex,
     setSelectedStatButtonIndex,
-    setValue
+    setValue,
+    hp,
+    attack,
+    defense,
+    specialAttack,
+    specialDefense,
+    speed
 }) => {
 
     console.log('2. StatButtons Rendered')
+
+    const stats_buttons = [
+        { value: 'hp', label: 'HP', stat: hp },
+        { value: 'atk', label: 'Atk', stat: attack },
+        { value: 'def', label: 'Def', stat: defense },
+        { value: 'spa', label: 'SpA', stat: specialAttack },
+        { value: 'spd', label: 'SpD', stat: specialDefense },
+        { value: 'spe', label: 'Spe', stat: speed },
+    ]
 
     return (
         <View style={styles.statButtonContainer}>
@@ -21,7 +36,8 @@ const StatButtons = ({
                             onPress={() => {
                                 setSelectedStatButtonIndex(index)
                                 setValue(item.value)
-                            }}>
+                            }}
+                        >
                             <AppChip title={item.stat} />
                             <AppText
                                 variant='bodyLarge'
@@ -35,7 +51,8 @@ const StatButtons = ({
                             onPress={() => {
                                 setSelectedStatButtonIndex(index)
                                 setValue(item.value)
-                            }}>
+                            }}
+                        >
                             <AppChip title={item.stat} style={styles.chipUnselected} />
                             <AppText
                                 variant='bodyLarge'
@@ -50,7 +67,7 @@ const StatButtons = ({
     );
 };
 
-export default StatButtons;
+export default memo(StatButtons);
 
 const styles = StyleSheet.create({
 
@@ -58,8 +75,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: "space-between",
         alignItems: 'center',
-        marginHorizontal: 20,
-        marginVertical: 10
+        marginTop: 10,
+        marginBottom: 20,
+        paddingVertical: 15,
+        paddingHorizontal: 15,
+        borderRadius: 7,
+        borderColor: '#d3d3d3',
+        borderWidth: .5
     },
 
     statName: {

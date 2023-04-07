@@ -9,6 +9,7 @@ const PokemonCard = ({
 
     return (
         <AppCard
+            // theme={{ color:{}}}
             onPress={onPress}
             mode='contained'
             title={item.name}

@@ -1,9 +1,9 @@
-import { createStackNavigator, TransitionPresets } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import AboutScreen from "../screens/AboutScreen";
 import { AppHeader } from "../components";
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export function AboutStack() {
 
@@ -12,7 +12,7 @@ export function AboutStack() {
             initialRouteName="About"
             screenOptions={{
                 header: (props) => <AppHeader {...props} />,
-                ...TransitionPresets.FadeFromBottomAndroid
+                animation: 'default',
             }}
         >
             <Stack.Screen name="About" component={AboutScreen} initialParams={{ title: '' }} />

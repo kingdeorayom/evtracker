@@ -9,7 +9,12 @@ const Tab = createMaterialBottomTabNavigator();
 
 export function TabNavigator() {
     return (
-        <Tab.Navigator>
+        <Tab.Navigator
+            barStyle={{
+                borderTopWidth: .5,
+                borderTopColor: '#d3d3d3'
+            }}
+        >
             <Tab.Screen
                 name='HomeStack'
                 component={HomeStack}

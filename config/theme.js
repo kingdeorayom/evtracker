@@ -1,131 +1,10 @@
 import { MD3LightTheme, configureFonts } from 'react-native-paper';
-
-const fontConfig = {
-    "displayLarge": {
-        "fontFamily": "Roboto",
-        "fontSize": 57,
-        "fontWeight": "700",
-        "letterSpacing": 0,
-        "lineHeight": 64,
-    },
-    "displayMedium": {
-        "fontFamily": "Roboto",
-        "fontSize": 45,
-        "fontWeight": "700",
-        "letterSpacing": 0,
-        "lineHeight": 52,
-    },
-    "displaySmall": {
-        "fontFamily": "Roboto",
-        "fontSize": 36,
-        "fontWeight": "700",
-        "letterSpacing": 0,
-        "lineHeight": 44,
-    },
-    "headlineLarge": {
-        "fontFamily": "Roboto",
-        "fontSize": 32,
-        "fontWeight": "700",
-        "letterSpacing": 0,
-        "lineHeight": 40,
-    },
-    "headlineMedium": {
-        "fontFamily": "Roboto",
-        "fontSize": 28,
-        "fontWeight": "700",
-        "letterSpacing": 0,
-        "lineHeight": 36,
-    },
-    "headlineSmall": {
-        "fontFamily": "Roboto",
-        "fontSize": 24,
-        "fontWeight": "700",
-        "letterSpacing": 0,
-        "lineHeight": 32,
-    },
-    "titleLarge": {
-        "fontFamily": "Roboto",
-        "fontSize": 22,
-        "fontWeight": "700",
-        "letterSpacing": 0,
-        "lineHeight": 28,
-    },
-    "titleMedium": {
-        "fontFamily": "Roboto",
-        "fontSize": 16,
-        "fontWeight": "500",
-        "letterSpacing": 0.15,
-        "lineHeight": 24,
-    },
-    "titleSmall": {
-        "fontFamily": "Roboto",
-        "fontSize": 14,
-        "fontWeight": "500",
-        "letterSpacing": 0.1,
-        "lineHeight": 20,
-    },
-    "labelLarge": {
-        "fontFamily": "Roboto",
-        "fontSize": 14,
-        "fontWeight": "500",
-        "letterSpacing": 0.1,
-        "lineHeight": 20,
-    },
-    "labelMedium": {
-        "fontFamily": "Roboto",
-        "fontSize": 12,
-        "fontWeight": "500",
-        "letterSpacing": 0.5,
-        "lineHeight": 16,
-    },
-    "labelSmall": {
-        "fontFamily": "Roboto",
-        "fontSize": 11,
-        "fontWeight": "500",
-        "letterSpacing": 0.5,
-        "lineHeight": 16,
-    },
-    "bodyLarge": {
-        "fontFamily": "Roboto",
-        "fontSize": 16,
-        "fontWeight": "400",
-        "letterSpacing": 0.15,
-        "lineHeight": 24,
-    },
-    "bodyMedium": {
-        "fontFamily": "Roboto",
-        "fontSize": 14,
-        "fontWeight": "400",
-        "letterSpacing": 0.25,
-        "lineHeight": 20,
-
-    },
-    "bodySmall": {
-        "fontFamily": "Roboto",
-        "fontSize": 12,
-        "fontWeight": "400",
-        "letterSpacing": 0.4,
-        "lineHeight": 16,
-    },
-    "default": {
-        "fontFamily": "Roboto",
-        "fontSize": 14,
-        "fontWeight": "400",
-        "letterSpacing": 0.25,
-        "lineHeight": 20,
-    },
-    "tabNavigation": {
-        "fontFamily": "Roboto",
-        "fontSize": 13,
-        "fontWeight": "400",
-        "letterSpacing": 0.25,
-        "lineHeight": 20,
-    },
-};
+import fonts from './fonts';
 
 const theme = {
     ...MD3LightTheme,
-    "fonts": configureFonts({ config: fontConfig }),
+    "fonts": configureFonts({ config: fonts }),
+
     "colors": {
         "primary": "rgb(192, 0, 1)",
         "onPrimary": "rgb(255, 255, 255)",
@@ -147,7 +26,8 @@ const theme = {
         "onBackground": "rgb(32, 26, 25)",
         "surface": "rgb(255, 255, 255)",
         "onSurface": "rgb(32, 26, 25)",
-        "surfaceVariant": "rgb(245, 245, 245)",
+        // "surfaceVariant": "rgb(245, 245, 245)",
+        "surfaceVariant": "rgb(255, 218, 212)",
         "onSurfaceVariant": "rgb(83, 67, 65)",
         "outline": "rgb(133, 115, 112)",
         "outlineVariant": "rgb(216, 194, 190)",
@@ -159,6 +39,7 @@ const theme = {
         "elevation": {
             "level0": "transparent",
             "level1": "rgb(252, 238, 242)",
+            // "level2": "rgb(250, 231, 235)",
             "level2": "rgb(255, 255, 255)",
             "level3": "rgb(245, 245, 245)",
             "level4": "rgb(247, 221, 225)",
@@ -168,6 +49,92 @@ const theme = {
         "onSurfaceDisabled": "rgba(32, 26, 25, 0.38)",
         "backdrop": "rgba(59, 45, 43, 0.4)"
     }
+
+    // "colors": {
+    //     "primary": "rgb(192, 0, 1)",
+    //     "onPrimary": "rgb(255, 255, 255)",
+    //     "primaryContainer": "rgb(255, 218, 212)",
+    //     "onPrimaryContainer": "rgb(65, 0, 0)",
+    //     "secondary": "rgb(119, 86, 81)",
+    //     "onSecondary": "rgb(255, 255, 255)",
+    //     "secondaryContainer": "rgb(255, 218, 212)",
+    //     "onSecondaryContainer": "rgb(44, 21, 18)",
+    //     "tertiary": "rgb(112, 92, 46)",
+    //     "onTertiary": "rgb(255, 255, 255)",
+    //     "tertiaryContainer": "rgb(251, 223, 166)",
+    //     "onTertiaryContainer": "rgb(37, 26, 0)",
+    //     "error": "rgb(186, 26, 26)",
+    //     "onError": "rgb(255, 255, 255)",
+    //     "errorContainer": "rgb(255, 218, 214)",
+    //     "onErrorContainer": "rgb(65, 0, 2)",
+    //     "background": "rgb(255, 251, 255)",
+    //     "onBackground": "rgb(32, 26, 25)",
+    //     "surface": "rgb(255, 251, 255)",
+    //     "onSurface": "rgb(32, 26, 25)",
+    //     "surfaceVariant": "rgb(245, 221, 218)",
+    //     "onSurfaceVariant": "rgb(83, 67, 65)",
+    //     "outline": "rgb(133, 115, 112)",
+    //     "outlineVariant": "rgb(216, 194, 190)",
+    //     "shadow": "rgb(0, 0, 0)",
+    //     "scrim": "rgb(0, 0, 0)",
+    //     "inverseSurface": "rgb(54, 47, 46)",
+    //     "inverseOnSurface": "rgb(251, 238, 236)",
+    //     "inversePrimary": "rgb(255, 180, 168)",
+    //     "elevation": {
+    //         "level0": "transparent",
+    //         "level1": "rgb(252, 238, 242)",
+    //         "level2": "rgb(250, 231, 235)",
+    //         "level3": "rgb(248, 223, 227)",
+    //         "level4": "rgb(247, 221, 225)",
+    //         "level5": "rgb(246, 216, 219)"
+    //     },
+    //     "surfaceDisabled": "rgba(32, 26, 25, 0.12)",
+    //     "onSurfaceDisabled": "rgba(32, 26, 25, 0.38)",
+    //     "backdrop": "rgba(59, 45, 43, 0.4)"
+    // }
+
+    // "colors": {
+    //     "primary": "rgb(0, 110, 0)",
+    //     "onPrimary": "rgb(255, 255, 255)",
+    //     "primaryContainer": "rgb(141, 251, 119)",
+    //     "onPrimaryContainer": "rgb(0, 34, 0)",
+    //     "secondary": "rgb(84, 99, 77)",
+    //     "onSecondary": "rgb(255, 255, 255)",
+    //     "secondaryContainer": "rgb(215, 232, 205)",
+    //     "onSecondaryContainer": "rgb(18, 31, 14)",
+    //     "tertiary": "rgb(56, 101, 104)",
+    //     "onTertiary": "rgb(255, 255, 255)",
+    //     "tertiaryContainer": "rgb(188, 235, 238)",
+    //     "onTertiaryContainer": "rgb(0, 32, 34)",
+    //     "error": "rgb(186, 26, 26)",
+    //     "onError": "rgb(255, 255, 255)",
+    //     "errorContainer": "rgb(255, 218, 214)",
+    //     "onErrorContainer": "rgb(65, 0, 2)",
+    //     "background": "rgb(252, 253, 246)",
+    //     "onBackground": "rgb(26, 28, 24)",
+    //     "surface": "rgb(252, 253, 246)",
+    //     "onSurface": "rgb(26, 28, 24)",
+    //     "surfaceVariant": "rgb(223, 228, 215)",
+    //     "onSurfaceVariant": "rgb(67, 72, 63)",
+    //     "outline": "rgb(115, 121, 110)",
+    //     "outlineVariant": "rgb(195, 200, 188)",
+    //     "shadow": "rgb(0, 0, 0)",
+    //     "scrim": "rgb(0, 0, 0)",
+    //     "inverseSurface": "rgb(47, 49, 45)",
+    //     "inverseOnSurface": "rgb(241, 241, 235)",
+    //     "inversePrimary": "rgb(114, 222, 94)",
+    //     "elevation": {
+    //         "level0": "transparent",
+    //         "level1": "rgb(239, 246, 234)",
+    //         "level2": "rgb(232, 242, 226)",
+    //         "level3": "rgb(224, 237, 219)",
+    //         "level4": "rgb(222, 236, 217)",
+    //         "level5": "rgb(217, 233, 212)"
+    //     },
+    //     "surfaceDisabled": "rgba(26, 28, 24, 0.12)",
+    //     "onSurfaceDisabled": "rgba(26, 28, 24, 0.38)",
+    //     "backdrop": "rgba(44, 50, 41, 0.4)"
+    // }
 }
 
 export default theme

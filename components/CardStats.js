@@ -10,6 +10,7 @@ const CardStats = ({ item }) => {
                 <AppChip
                     title={item.yield[0].hp}
                     textStyle={item.yield[0].hp > 0 ? styles.bold : null}
+                    theme={{ colors: { secondaryContainer: "whitesmoke" } }}
                 />
                 <AppText style={styles.statName}>HP</AppText>
             </View>
@@ -17,6 +18,7 @@ const CardStats = ({ item }) => {
                 <AppChip
                     title={item.yield[0].atk}
                     textStyle={item.yield[0].atk > 0 ? styles.bold : null}
+                    theme={{ colors: { secondaryContainer: "whitesmoke" } }}
                 />
                 <AppText style={styles.statName}>Atk</AppText>
             </View>
@@ -24,6 +26,7 @@ const CardStats = ({ item }) => {
                 <AppChip
                     title={item.yield[0].def}
                     textStyle={item.yield[0].def > 0 ? styles.bold : null}
+                    theme={{ colors: { secondaryContainer: "whitesmoke" } }}
                 />
                 <AppText style={styles.statName}>Def</AppText>
             </View>
@@ -31,6 +34,7 @@ const CardStats = ({ item }) => {
                 <AppChip
                     title={item.yield[0].spa}
                     textStyle={item.yield[0].spa > 0 ? styles.bold : null}
+                    theme={{ colors: { secondaryContainer: "whitesmoke" } }}
                 />
                 <AppText style={styles.statName}>SpA</AppText>
             </View>
@@ -38,6 +42,7 @@ const CardStats = ({ item }) => {
                 <AppChip
                     title={item.yield[0].spd}
                     textStyle={item.yield[0].spd > 0 ? styles.bold : null}
+                    theme={{ colors: { secondaryContainer: "whitesmoke" } }}
                 />
                 <AppText style={styles.statName}>SpD</AppText>
             </View>
@@ -45,6 +50,7 @@ const CardStats = ({ item }) => {
                 <AppChip
                     title={item.yield[0].spe}
                     textStyle={item.yield[0].spe > 0 ? styles.bold : null}
+                    theme={{ colors: { secondaryContainer: "whitesmoke" } }}
                 />
                 <AppText style={styles.statName}>Spe</AppText>
             </View>
@@ -68,7 +74,7 @@ const styles = StyleSheet.create({
 
     bold: {
         fontWeight: '700',
-        color: 'green'
+        // color: 'seagreen'
     }
 
 })

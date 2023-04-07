@@ -1,5 +1,6 @@
 import { View, StyleSheet } from 'react-native'
 import AppText from './AppText';
+import { memo } from 'react';
 
 const AppBrand = ({ marginTop, marginBottom }) => {
 
@@ -30,4 +31,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default AppBrand
+export default memo(AppBrand)
