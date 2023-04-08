@@ -6,8 +6,6 @@ const AppText = ({
     ...props
 }) => {
 
-    console.log('AppText rendered')
-
     return (
         <Text
             {...props}

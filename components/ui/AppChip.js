@@ -6,8 +6,6 @@ const AppChip = ({
     ...props
 }) => {
 
-    console.log('AppChip rendered')
-
     return (
         <Chip {...props}>{title}</Chip>
     );

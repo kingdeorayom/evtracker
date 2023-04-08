@@ -8,8 +8,6 @@ const PresetValue = ({
     setCustomValue
 }) => {
 
-    console.log('3. PresetValue Rendered')
-
     const preset_value_buttons = [
         { value: 1, label: '1' },
         { value: 2, label: '2' },
@@ -24,9 +22,10 @@ const PresetValue = ({
         <View style={styles.presetValueContainer}>
             {
                 preset_value_buttons.map((item, index) => {
-                    return index === selectedPresetValueIndex ? (
+                    return (
                         <Pressable
                             key={index}
+                            style={({ pressed }) => [{ opacity: pressed ? .1 : 1 }]}
                             onPress={() => {
                                 setSelectedPresetValueIndex(index)
                                 setCustomValue(item.value)
@@ -34,21 +33,8 @@ const PresetValue = ({
                         >
                             <AppChip
                                 title={item.label}
-                                textStyle={styles.chipTextStyle}
-                            />
-                        </Pressable>
-                    ) : (
-                        <Pressable
-                            key={index}
-                            onPress={() => {
-                                setSelectedPresetValueIndex(index)
-                                setCustomValue(item.value)
-                            }}
-                        >
-                            <AppChip
-                                title={item.label}
-                                style={styles.chipUnselected}
-                                textStyle={styles.chipTextStyle}
+                                style={index === selectedPresetValueIndex ? null : styles.chip}
+                                textStyle={styles.chipText}
                             />
                         </Pressable>
                     )
@@ -68,6 +54,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 10,
         marginBottom: 20,
+        marginHorizontal: 15,
         paddingVertical: 15,
         paddingHorizontal: 15,
         borderRadius: 7,
@@ -75,11 +62,11 @@ const styles = StyleSheet.create({
         borderWidth: .5
     },
 
-    chipUnselected: {
+    chip: {
         backgroundColor: "#f5f5f5",
     },
 
-    chipTextStyle: {
+    chipText: {
         fontWeight: '700'
     }
 

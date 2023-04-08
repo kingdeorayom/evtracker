@@ -15,8 +15,6 @@ const StatButtons = ({
     speed
 }) => {
 
-    console.log('2. StatButtons Rendered')
-
     const stats_buttons = [
         { value: 'hp', label: 'HP', stat: hp },
         { value: 'atk', label: 'Atk', stat: attack },
@@ -30,30 +28,20 @@ const StatButtons = ({
         <View style={styles.statButtonContainer}>
             {
                 stats_buttons.map((item, index) => {
-                    return index === selectedStatButtonIndex ? (
+                    return (
                         <Pressable
                             key={index}
+                            style={({ pressed }) => [{ opacity: pressed ? .1 : 1 }]}
                             onPress={() => {
                                 setSelectedStatButtonIndex(index)
                                 setValue(item.value)
                             }}
                         >
-                            <AppChip title={item.stat} />
-                            <AppText
-                                variant='bodyLarge'
-                                style={styles.statName}>
-                                {item.label}
-                            </AppText>
-                        </Pressable>
-                    ) : (
-                        <Pressable
-                            key={index}
-                            onPress={() => {
-                                setSelectedStatButtonIndex(index)
-                                setValue(item.value)
-                            }}
-                        >
-                            <AppChip title={item.stat} style={styles.chipUnselected} />
+                            <AppChip
+                                title={item.stat}
+                                style={index === selectedStatButtonIndex ? null : styles.chip}
+                                textStyle={styles.chipText}
+                            />
                             <AppText
                                 variant='bodyLarge'
                                 style={styles.statName}>
@@ -77,11 +65,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 10,
         marginBottom: 10,
+        marginHorizontal: 15,
         paddingVertical: 15,
         paddingHorizontal: 15,
         borderRadius: 7,
         borderColor: '#d3d3d3',
-        borderWidth: .5
+        borderWidth: .5,
     },
 
     statName: {
@@ -89,9 +78,12 @@ const styles = StyleSheet.create({
         fontWeight: '700'
     },
 
-    chipUnselected: {
+    chip: {
         backgroundColor: "#f5f5f5",
-    }
+    },
 
+    chipText: {
+        fontWeight: '700'
+    }
 
 })

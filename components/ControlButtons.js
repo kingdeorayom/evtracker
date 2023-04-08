@@ -1,57 +1,11 @@
 import { StyleSheet, View } from 'react-native'
 import AppButton from './ui/AppButton'
-import { memo, useCallback } from 'react'
-import AppText from './ui/AppText'
+import { memo } from 'react'
 
 const ControlButtons = ({
     increment,
-    decrement,
-
-    // value,
-    // customValue,
-
-    // selectedStatButtonIndex,
-    // selectedPresetValueIndex,
-
-    // setHp,
-    // setAttack,
-    // setDefense,
-    // setSpecialAttack,
-    // setSpecialDefense,
-    // setSpeed,
+    decrement
 }) => {
-
-    console.log('4. ControlButtons Rendered')
-
-    // const increment = useCallback(() => {
-    //     if (value === 'hp')
-    //         setHp(previousValue => previousValue + customValue)
-    //     else if (value === 'atk')
-    //         setAttack(previousValue => previousValue + customValue)
-    //     else if (value === 'def')
-    //         setDefense(previousValue => previousValue + customValue)
-    //     else if (value === 'spa')
-    //         setSpecialAttack(previousValue => previousValue + customValue)
-    //     else if (value === 'spd')
-    //         setSpecialDefense(previousValue => previousValue + customValue)
-    //     else if (value === 'spe')
-    //         setSpeed(previousValue => previousValue + customValue)
-    // }, [selectedPresetValueIndex, selectedStatButtonIndex])
-
-    // const decrement = useCallback(() => {
-    //     if (value === 'hp')
-    //         setHp(previousValue => previousValue - customValue)
-    //     else if (value === 'atk')
-    //         setAttack(previousValue => previousValue - customValue)
-    //     else if (value === 'def')
-    //         setDefense(previousValue => previousValue - customValue)
-    //     else if (value === 'spa')
-    //         setSpecialAttack(previousValue => previousValue - customValue)
-    //     else if (value === 'spd')
-    //         setSpecialDefense(previousValue => previousValue - customValue)
-    //     else if (value === 'spe')
-    //         setSpeed(previousValue => previousValue - customValue)
-    // }, [selectedPresetValueIndex, selectedStatButtonIndex])
 
     return (
 
@@ -62,7 +16,7 @@ const ControlButtons = ({
                 iconName='plus'
                 onPress={increment}
                 theme={{
-                    // roundness: 1.5,
+                    roundness: 1.5,
                     // colors: { primary: 'rgb(255, 218, 212)', onPrimary: 'black' }
                 }}
             />
@@ -72,7 +26,7 @@ const ControlButtons = ({
                 iconName='minus'
                 onPress={decrement}
                 theme={{
-                    // roundness: 1.5,
+                    roundness: 1.5,
                     // colors: { primary: 'rgb(255, 218, 212)', onPrimary: 'black' }
                 }}
             />
@@ -88,13 +42,15 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        marginVertical: 10
+        marginVertical: 10,
+        marginHorizontal: 15
     },
 
     controlButton: {
-        width: '90%',
+        width: '100%',
         // marginHorizontal: 5,
-        marginVertical: 7
+        marginVertical: 7,
+        marginBottom: 10
     },
 
 

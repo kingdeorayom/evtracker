@@ -9,8 +9,6 @@ const AppScreen = ({
     ...props
 }) => {
 
-    console.log('AppScreen rendered')
-
     return (
         <SafeAreaProvider>
             <StatusBar

@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import { memo } from 'react'
 import { StyleSheet } from 'react-native'
 import AppText from './ui/AppText'
 
@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
     instruction: {
         marginVertical: 10,
         color: '#808080',
-        fontSize: 14
+        fontSize: 14,
+        marginHorizontal: 15,
     },
 
 })

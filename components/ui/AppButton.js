@@ -9,8 +9,6 @@ const AppButton = ({
     ...props
 }) => {
 
-    console.log('AppButton rendered')
-
     return (
         <Button
             icon={iconName}

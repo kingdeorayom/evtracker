@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
-import { AppBrand, AppScreen, ControlButtons, Header, Instruction, PresetValue, StatButtons } from '../components'
 import { ScrollView, StyleSheet } from 'react-native'
+import { AppBrand, ControlButtons, Header, Instruction, PresetValue, StatButtons } from '../components'
+import theme from '../config/theme';
 
 const HomeScreen = () => {
 
@@ -68,51 +69,44 @@ const HomeScreen = () => {
     }, [selectedStatButtonIndex, selectedPresetValueIndex])
 
     return (
-        <AppScreen>
+        <ScrollView style={styles.container}>
 
-            <ScrollView style={styles.container}>
+            <Header
+                setHp={setHp}
+                setAttack={setAttack}
+                setDefense={setDefense}
+                setSpecialAttack={setSpecialAttack}
+                setSpecialDefense={setSpecialDefense}
+                setSpeed={setSpeed}
+            />
 
-                <Header />
+            <AppBrand />
 
-                <AppBrand
-                    marginTop={5}
-                    marginBottom={15}
-                />
+            <Instruction title='Select a Stat to modify, then choose an increment or decrement value below.' />
 
-                <Instruction
-                    title='Select a Stat to modify, then choose an increment or decrement value below.'
-                />
+            <StatButtons
+                selectedStatButtonIndex={selectedStatButtonIndex}
+                setSelectedStatButtonIndex={setSelectedStatButtonIndex}
+                setValue={setValue}
+                hp={hp}
+                attack={attack}
+                defense={defense}
+                specialAttack={specialAttack}
+                specialDefense={specialDefense}
+                speed={speed}
+            />
 
-                <StatButtons
-                    selectedStatButtonIndex={selectedStatButtonIndex}
-                    setSelectedStatButtonIndex={setSelectedStatButtonIndex}
-                    setValue={setValue}
-                    hp={hp}
-                    attack={attack}
-                    defense={defense}
-                    specialAttack={specialAttack}
-                    specialDefense={specialDefense}
-                    speed={speed}
-                />
+            <Instruction title='Select increment or decrement value.' />
 
-                <Instruction
-                    title='Select increment or decrement value.'
-                />
+            <PresetValue
+                selectedPresetValueIndex={selectedPresetValueIndex}
+                setSelectedPresetValueIndex={setSelectedPresetValueIndex}
+                setCustomValue={setCustomValue}
+            />
 
-                <PresetValue
-                    selectedPresetValueIndex={selectedPresetValueIndex}
-                    setSelectedPresetValueIndex={setSelectedPresetValueIndex}
-                    setCustomValue={setCustomValue}
-                />
+            <ControlButtons increment={increment} decrement={decrement} />
 
-                <ControlButtons
-                    increment={increment}
-                    decrement={decrement}
-                />
-
-            </ScrollView>
-
-        </AppScreen>
+        </ScrollView>
     )
 }
 
@@ -122,7 +116,11 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        paddingHorizontal: 15
-    }
+        backgroundColor: theme.colors.background
+    },
+
+    content: {
+        flex: 1,
+    },
 
 });
