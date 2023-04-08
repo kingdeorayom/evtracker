@@ -1,6 +1,6 @@
+import { memo } from 'react'
 import { StyleSheet, View } from 'react-native'
 import AppButton from './ui/AppButton'
-import { memo } from 'react'
 
 const ControlButtons = ({
     increment,

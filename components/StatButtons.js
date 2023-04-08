@@ -1,7 +1,7 @@
+import { memo } from "react";
 import { StyleSheet, View, Pressable } from "react-native";
 import AppChip from "./ui/AppChip";
 import AppText from "./ui/AppText";
-import { memo } from "react";
 
 const StatButtons = ({
     selectedStatButtonIndex,

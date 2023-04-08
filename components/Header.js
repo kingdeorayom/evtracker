@@ -1,6 +1,6 @@
-import { memo, useCallback, useState } from 'react'
+import { memo, useCallback } from 'react'
 import { Alert } from 'react-native';
-import { Appbar, Divider, Menu } from 'react-native-paper'
+import { Appbar } from 'react-native-paper'
 
 const Header = ({
     setHp,
@@ -40,10 +40,10 @@ const Header = ({
         );
     }
 
-    const [visible, setVisible] = useState(false);
+    // const [visible, setVisible] = useState(false);
 
-    const openMenu = () => setVisible(true);
-    const closeMenu = () => setVisible(false);
+    // const openMenu = () => setVisible(true);
+    // const closeMenu = () => setVisible(false);
 
     return (
         <Appbar.Header>
