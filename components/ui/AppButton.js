@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Button } from "react-native-paper";
 
 const AppButton = ({
@@ -7,6 +8,9 @@ const AppButton = ({
     onPress,
     ...props
 }) => {
+
+    console.log('AppButton rendered')
+
     return (
         <Button
             icon={iconName}
@@ -19,4 +23,4 @@ const AppButton = ({
     );
 };
 
-export default AppButton;
+export default memo(AppButton);

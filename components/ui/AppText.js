@@ -1,9 +1,13 @@
+import { memo } from "react";
 import { Text } from "react-native-paper";
 
 const AppText = ({
     children,
     ...props
 }) => {
+
+    console.log('AppText rendered')
+
     return (
         <Text
             {...props}
@@ -13,4 +17,4 @@ const AppText = ({
     );
 };
 
-export default AppText;
+export default memo(AppText);

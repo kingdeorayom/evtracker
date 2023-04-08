@@ -1,16 +1,12 @@
 import { Provider as PaperProvider } from 'react-native-paper';
 import theme from './config/theme'
-
-import { NavigationContainer } from '@react-navigation/native';
-import { TabNavigator } from './navigation/TabNavigator';
+import HomeScreen from './screens/HomeScreen';
 
 const App = () => {
 
   return (
     <PaperProvider theme={theme}>
-      <NavigationContainer theme={theme}>
-        <TabNavigator />
-      </NavigationContainer>
+      <HomeScreen />
     </PaperProvider>
   );
 }

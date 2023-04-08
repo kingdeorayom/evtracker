@@ -1,7 +1,6 @@
 import { useCallback, useState } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
-import { Divider } from 'react-native-paper';
-import { AppScreen, AppText, AppBrand, PresetValue, ControlButtons, StatButtons } from '../components';
+import { AppBrand, AppScreen, ControlButtons, Header, Instruction, PresetValue, StatButtons } from '../components'
+import { ScrollView, StyleSheet } from 'react-native'
 
 const HomeScreen = () => {
 
@@ -19,46 +18,70 @@ const HomeScreen = () => {
     const [selectedPresetValueIndex, setSelectedPresetValueIndex] = useState(0);
 
     const increment = useCallback(() => {
-        if (value === 'hp')
-            setHp(previousValue => previousValue + customValue)
-        else if (value === 'atk')
-            setAttack(previousValue => previousValue + customValue)
-        else if (value === 'def')
-            setDefense(previousValue => previousValue + customValue)
-        else if (value === 'spa')
-            setSpecialAttack(previousValue => previousValue + customValue)
-        else if (value === 'spd')
-            setSpecialDefense(previousValue => previousValue + customValue)
-        else if (value === 'spe')
-            setSpeed(previousValue => previousValue + customValue)
-    }, [selectedPresetValueIndex, selectedStatButtonIndex])
+        switch (value) {
+            case 'hp':
+                setHp(previousValue => previousValue + customValue)
+                break;
+            case 'atk':
+                setAttack(previousValue => previousValue + customValue)
+                break;
+            case 'def':
+                setDefense(previousValue => previousValue + customValue)
+                break;
+            case 'spa':
+                setSpecialAttack(previousValue => previousValue + customValue)
+                break;
+            case 'spd':
+                setSpecialDefense(previousValue => previousValue + customValue)
+                break;
+            case 'spe':
+                setSpeed(previousValue => previousValue + customValue)
+                break;
+            default:
+                break;
+        }
+    }, [selectedStatButtonIndex, selectedPresetValueIndex])
 
     const decrement = useCallback(() => {
-        if (value === 'hp')
-            setHp(previousValue => previousValue - customValue)
-        else if (value === 'atk')
-            setAttack(previousValue => previousValue - customValue)
-        else if (value === 'def')
-            setDefense(previousValue => previousValue - customValue)
-        else if (value === 'spa')
-            setSpecialAttack(previousValue => previousValue - customValue)
-        else if (value === 'spd')
-            setSpecialDefense(previousValue => previousValue - customValue)
-        else if (value === 'spe')
-            setSpeed(previousValue => previousValue - customValue)
-    }, [selectedPresetValueIndex, selectedStatButtonIndex])
+        switch (value) {
+            case 'hp':
+                setHp(previousValue => previousValue - customValue)
+                break;
+            case 'atk':
+                setAttack(previousValue => previousValue - customValue)
+                break;
+            case 'def':
+                setDefense(previousValue => previousValue - customValue)
+                break;
+            case 'spa':
+                setSpecialAttack(previousValue => previousValue - customValue)
+                break;
+            case 'spd':
+                setSpecialDefense(previousValue => previousValue - customValue)
+                break;
+            case 'spe':
+                setSpeed(previousValue => previousValue - customValue)
+                break;
+            default:
+                break;
+        }
+    }, [selectedStatButtonIndex, selectedPresetValueIndex])
 
     return (
         <AppScreen>
+
             <ScrollView style={styles.container}>
 
-                {/* <AppBrand marginTop={0} marginBottom={30} /> */}
+                <Header />
 
-                <AppText variant='titleLarge'>Choose Stat</AppText>
+                <AppBrand
+                    marginTop={5}
+                    marginBottom={15}
+                />
 
-                <AppText variant='bodyLarge' style={styles.instruction}>
-                    Select a Stat to modify, then choose an increment or decrement value below
-                </AppText>
+                <Instruction
+                    title='Select a Stat to modify, then choose an increment or decrement value below.'
+                />
 
                 <StatButtons
                     selectedStatButtonIndex={selectedStatButtonIndex}
@@ -72,11 +95,9 @@ const HomeScreen = () => {
                     speed={speed}
                 />
 
-                <AppText variant='titleLarge'>Preset Value</AppText>
-
-                <AppText variant='bodyLarge' style={styles.instruction}>
-                    Select increment or decrement value
-                </AppText>
+                <Instruction
+                    title='Select increment or decrement value.'
+                />
 
                 <PresetValue
                     selectedPresetValueIndex={selectedPresetValueIndex}
@@ -84,46 +105,24 @@ const HomeScreen = () => {
                     setCustomValue={setCustomValue}
                 />
 
-                {/* <Divider style={styles.divider} /> */}
-
                 <ControlButtons
                     increment={increment}
                     decrement={decrement}
-                // value={value}
-                // customValue={customValue}
-                // selectedStatButtonIndex={selectedStatButtonIndex}
-                // selectedPresetValueIndex={selectedPresetValueIndex}
-                // setHp={setHp}
-                // setAttack={setAttack}
-                // setDefense={setDefense}
-                // setSpecialAttack={setSpecialAttack}
-                // setSpecialDefense={setSpecialDefense}
-                // setSpeed={setSpeed}
                 />
 
             </ScrollView>
+
         </AppScreen>
     )
 }
 
+export default HomeScreen
 
 const styles = StyleSheet.create({
 
     container: {
         flex: 1,
         paddingHorizontal: 15
-    },
-
-    instruction: {
-        marginVertical: 10,
-        color: '#808080',
-        fontSize: 14
-    },
-
-    divider: {
-        marginVertical: 5
-    },
+    }
 
 });
-
-export default HomeScreen

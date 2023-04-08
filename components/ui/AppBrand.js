@@ -4,7 +4,7 @@ import { memo } from 'react';
 
 const AppBrand = ({ marginTop, marginBottom }) => {
 
-    console.log('1. AppBrand Rendered')
+    console.log('AppBrand rendered')
 
     return (
         <View style={[styles.container, { marginTop: marginTop, marginBottom: marginBottom }]}>

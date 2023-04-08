@@ -1,5 +1,6 @@
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar, StyleSheet } from 'react-native';
+import { memo } from 'react';
 
 const AppScreen = ({
     children,
@@ -7,6 +8,9 @@ const AppScreen = ({
     backgroundColor = 'white',
     ...props
 }) => {
+
+    console.log('AppScreen rendered')
+
     return (
         <SafeAreaProvider>
             <StatusBar
@@ -20,7 +24,7 @@ const AppScreen = ({
     );
 };
 
-export default AppScreen;
+export default memo(AppScreen);
 
 const styles = StyleSheet.create({
 
