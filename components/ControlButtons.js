@@ -8,27 +8,20 @@ const ControlButtons = ({
 }) => {
 
     return (
-
         <View style={styles.controlButtonsContainer}>
-            <AppButton
-                style={styles.controlButton}
-                title='Increase'
-                iconName='plus'
-                onPress={increment}
-                theme={{
-                    roundness: 1.5,
-                    // colors: { primary: 'rgb(255, 218, 212)', onPrimary: 'black' }
-                }}
-            />
             <AppButton
                 style={styles.controlButton}
                 title='Decrease'
                 iconName='minus'
                 onPress={decrement}
-                theme={{
-                    roundness: 1.5,
-                    // colors: { primary: 'rgb(255, 218, 212)', onPrimary: 'black' }
-                }}
+                theme={{ roundness: 1.5 }}
+            />
+            <AppButton
+                style={styles.controlButton}
+                title='Increase'
+                iconName='plus'
+                onPress={increment}
+                theme={{ roundness: 1.5 }}
             />
         </View>
     )
@@ -39,19 +32,23 @@ export default memo(ControlButtons)
 const styles = StyleSheet.create({
 
     controlButtonsContainer: {
-        flexDirection: 'column',
+        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        marginVertical: 10,
-        marginHorizontal: 15
+        marginHorizontal: 15,
+        paddingTop: 10,
+        paddingBottom: 5,
+        paddingHorizontal: 15,
+        borderRadius: 7,
+        borderColor: '#d3d3d3',
+        borderWidth: .5,
     },
 
     controlButton: {
-        width: '100%',
-        // marginHorizontal: 5,
+        width: '49%',
+        marginHorizontal: 5,
         marginVertical: 7,
         marginBottom: 10
     },
-
 
 })

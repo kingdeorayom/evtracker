@@ -1,6 +1,6 @@
-import { memo, useCallback } from 'react'
+import { memo, useCallback, useState } from 'react'
 import { Alert } from 'react-native';
-import { Appbar } from 'react-native-paper'
+import { Appbar, Divider, Menu } from 'react-native-paper'
 
 const Header = ({
     setHp,
@@ -23,7 +23,7 @@ const Header = ({
     const _handleAlert = () => {
         Alert.alert(
             'Are you sure you want to reset all tracked EVs?',
-            'This will set all Stat Counters to 0.',
+            'This will set every stat counter to 0.',
             [
                 {
                     text: 'Yes',
@@ -40,11 +40,25 @@ const Header = ({
         );
     }
 
+    const [visible, setVisible] = useState(false);
+
+    const openMenu = () => setVisible(true);
+    const closeMenu = () => setVisible(false);
+
     return (
         <Appbar.Header>
             <Appbar.Content title="" />
             <Appbar.Action icon="cached" onPress={_handleAlert} />
-            <Appbar.Action icon="dots-vertical" onPress={() => console.log("Hello")} />
+            {/* <Menu
+                anchorPosition='bottom'
+                visible={visible}
+                onDismiss={closeMenu}
+                anchor={<Appbar.Action icon="dots-vertical" onPress={(openMenu)} />}>
+                <Menu.Item onPress={() => { }} title="Change Theme" />
+                <Menu.Item onPress={() => { }} title="Item 2" />
+                <Divider />
+                <Menu.Item onPress={() => { }} title="About" />
+            </Menu> */}
         </Appbar.Header>
     )
 }
