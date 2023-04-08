@@ -63,7 +63,7 @@ const ControlButtons = ({
                 onPress={increment}
                 theme={{
                     roundness: 1.5,
-                    // colors: { primary: 'rgb(215, 232, 205)', onPrimary: 'black' }
+                    colors: { primary: 'rgb(255, 218, 212)', onPrimary: 'black' }
                 }}
             />
             <AppButton
@@ -73,7 +73,7 @@ const ControlButtons = ({
                 onPress={decrement}
                 theme={{
                     roundness: 1.5,
-                    // colors: { primary: 'rgb(215, 232, 205)', onPrimary: 'black' }
+                    colors: { primary: 'rgb(255, 218, 212)', onPrimary: 'black' }
                 }}
             />
         </View>

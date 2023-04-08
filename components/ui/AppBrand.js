@@ -8,7 +8,7 @@ const AppBrand = ({ marginTop, marginBottom }) => {
 
     return (
         <View style={[styles.container, { marginTop: marginTop, marginBottom: marginBottom }]}>
-            <AppText variant='displayMedium'><AppText variant='displayMedium' style={styles.accent}>EV</AppText>Tracker</AppText>
+            <AppText variant='displaySmall'><AppText variant='displaySmall' style={styles.accent}>EV</AppText>Tracker</AppText>
             <AppText variant='titleMedium' style={styles.subtitle}>The Pokémon EV Tracker</AppText>
         </View>
     )

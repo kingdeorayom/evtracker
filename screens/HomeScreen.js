@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { Divider } from 'react-native-paper';
 import { AppScreen, AppText, AppBrand, PresetValue, ControlButtons, StatButtons } from '../components';
 
@@ -50,9 +50,9 @@ const HomeScreen = () => {
 
     return (
         <AppScreen>
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
 
-                <AppBrand marginTop={0} marginBottom={30} />
+                {/* <AppBrand marginTop={0} marginBottom={30} /> */}
 
                 <AppText variant='titleLarge'>Choose Stat</AppText>
 
@@ -101,7 +101,7 @@ const HomeScreen = () => {
                 // setSpeed={setSpeed}
                 />
 
-            </View>
+            </ScrollView>
         </AppScreen>
     )
 }

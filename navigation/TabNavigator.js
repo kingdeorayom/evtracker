@@ -11,8 +11,8 @@ export function TabNavigator() {
     return (
         <Tab.Navigator
             barStyle={{
-                borderTopWidth: .5,
-                borderTopColor: '#d3d3d3'
+                // borderTopWidth: .5,
+                // borderTopColor: '#d3d3d3'
             }}
         >
             <Tab.Screen
